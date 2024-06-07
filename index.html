@@ -1,11 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar Sesión - Panel de Control</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #101010; /* Negro oscuro */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .login-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            border: none;
+            background-color: rgb(0, 0, 0); /* Blanco transparente */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            padding: 40px;
+            color: #fff;
+        }
+        .logo-img {
+            width: 100%;
+            max-width: 200px;
+            margin: auto; /* Centrar imagen */
+            display: block;
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border: none;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.2); /* Blanco transparente */
+            color: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: rgba(255, 255, 255, 0.5); /* Blanco transparente */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Azul */
+            border: none;
+            border-radius: 20px;
+            padding: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Azul oscuro */
+        }
+    </style>
 </head>
 <body>
-    
+
+<div class="login-container">
+    <div class="card">
+        <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/secured-attachments/messaging_message/attachment/1b4d0ae8504b4eb10d903b83e73df596-1712686650016/3.png?__cld_token__=exp=1717798845~hmac=3d9bf330da8b5434f96c73b4a9b521bef5c223c93cf984713cbed34bec02f41b" alt="Logo de la Marca" class="logo-img">
+        <h3 class="mb-4 text-center">Iniciar Sesión</h3> <!-- Centrar el texto -->
+        <form id="loginForm" action="#" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de Usuario" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#loginForm').submit(function(event) {
+            event.preventDefault();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            
+            // Validación simple (solo como ejemplo)
+            if (username === 'Soledusa' && password === 'Soled.2024') {
+                window.location.href = 'src/panel/index.html'; // Redirigir al usuario
+            } else {
+                alert('Nombre de usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
